@@ -1,3 +1,4 @@
 ifconfig eth0 up
 /etc/init.d/networking start
+/etc/init.d/apache2 start
 route add default gw 64.233.240.1
