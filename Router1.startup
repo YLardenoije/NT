@@ -1,0 +1,11 @@
+ifconfig eth0 up
+ifconfig eth1 up
+ifconfig eth0 inet6 up
+ifconfig eth1 inet6 up
+/etc/init.d/networking start
+route add -net 64.233.240.0/20 gw 68.80.0.2
+
+route  -A inet6 add 2001:21:1:21FD::0/64 gw 2001:23:1:21ED::31
+
+sysctl -w net.ipv6.conf.all.forwarding=1
+/etc/init.d/radvd start
